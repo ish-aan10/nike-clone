@@ -3,8 +3,9 @@ import jordanLogo from '../assets/icons/jordan_logo.png'
 import nikeLogo from '../assets/icons/nike_logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass'
-import { faHeart } from '@fortawesome/free-regular-svg-icons'
+import { faHeart, faUser } from '@fortawesome/free-regular-svg-icons'
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons/faBagShopping'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
     const [showFirst, setShowFirst]= useState(true);
@@ -19,7 +20,7 @@ const Navbar = () => {
 
     return (
         <main className='relative'>
-            <div className='flex justify-between items-center bg-gray-100 py-2 px-12'>
+            <div className='hidden lg:flex justify-between items-center bg-gray-100 py-2 px-12'>
                 <img className='h-7' src={jordanLogo} alt="Jordan Logo" />
                 <ul className='flex gap-2 font-semibold text-sm'>
                     <li>Find a Store</li>
@@ -33,7 +34,7 @@ const Navbar = () => {
             </div>
             <div className='flex justify-between items-center px-10'>
                 <img className='w-18' src={nikeLogo} alt="Nike Logo" />
-                <ul className='text-lg flex gap-3 font-semibold '>
+                <ul className='hidden text-lg lg:flex gap-3 font-semibold lg:mr-[-160px]'>
                     <li>New & Featured</li>
                     <li>Men</li>
                     <li>Women</li>
@@ -41,10 +42,15 @@ const Navbar = () => {
                     <li>Sale</li>
                     <li>SNKRS</li>
                 </ul>
-                <div className='text-xl flex gap-3 text-gray-700'>
-                    <i><FontAwesomeIcon icon={faMagnifyingGlass} /></i>
+                <div className='text-xl flex gap-3 text-gray-700 items-center'>
+                    <div className='flex items-center bg-white lg:bg-gray-100 lg:py-1 lg:px-3 lg:rounded-full lg:gap-3'>
+                        <i><FontAwesomeIcon icon={faMagnifyingGlass} /></i>
+                        <input className='text-lg font-montserrat outline-none w-30 placeholder:text-black hidden lg:block' type="text" placeholder='Search'/>
+                    </div>
+                    <i className='block lg:hidden'><FontAwesomeIcon icon={faUser} /></i>
                     <i><FontAwesomeIcon icon={faHeart} /></i>
-                    <i><FontAwesomeIcon icon={faBagShopping} /></i>
+                    <i className='hidden lg:block'><FontAwesomeIcon icon={faBagShopping} /></i>
+                    <i className='block lg:hidden'><FontAwesomeIcon icon={faBars} /></i>
                 </div>
             </div>
             <div className='relative overflow-hidden h-20 py-3.5 px-10 bg-gray-100'>

@@ -1,3 +1,4 @@
+import Featured from "./components/Featured";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 
@@ -8,7 +9,7 @@ const App = () => (
       <Hero />
     </section>
     <section>
-      PopularProducts
+      <Featured />
     </section>
     <section>
       SuperQuality
